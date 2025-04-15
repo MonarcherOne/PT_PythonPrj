@@ -33,16 +33,55 @@ class ChildWindow:
         self.label3.grid(row=3, column=0, padx=10, pady=5, sticky="w")
         self.spinbox3 = tkinter.Spinbox(self.child_window, from_=0, to=100)
         self.spinbox3.grid(row=3, column=1, padx=10, pady=5)
+        self.label3_unit= tkinter.Label(self.child_window, text="KM")
+        self.label3_unit.grid(row=3, column=2, padx=10, pady=5, sticky="w")
+
+        self.spinbox3_2 = tkinter.Spinbox(self.child_window, from_=0, to=100)
+        self.spinbox3_2.grid(row=3, column=3, padx=10, pady=5)
+        self.label3_2unit= tkinter.Label(self.child_window, text="KM")
+        self.label3_2unit.grid(row=3, column=4, padx=10, pady=5, sticky="w")
+        
+        self.spinbox3_3 = tkinter.Spinbox(self.child_window, from_=0, to=100)
+        self.spinbox3_3.grid(row=3, column=5, padx=10, pady=5)
+        self.label3_3unit= tkinter.Label(self.child_window, text="KM")
+        self.label3_3unit.grid(row=3, column=6, padx=10, pady=5, sticky="w")
+
 
         self.label4 = tkinter.Label(self.child_window, text="Reps:")
         self.label4.grid(row=4, column=0, padx=10, pady=5, sticky="w")
         self.spinbox4 = tkinter.Spinbox(self.child_window, from_=0, to=200)
         self.spinbox4.grid(row=4, column=1, padx=10, pady=5)
+        self.label4_unit= tkinter.Label(self.child_window, text="times")
+        self.label4_unit.grid(row=4, column=2, padx=10, pady=5, sticky="w")
+
+        self.spinbox4_2 = tkinter.Spinbox(self.child_window, from_=0, to=200)
+        self.spinbox4_2.grid(row=4, column=3, padx=10, pady=5)
+        self.label4_2unit= tkinter.Label(self.child_window, text="times")
+        self.label4_2unit.grid(row=4, column=4, padx=10, pady=5, sticky="w")
+        
+
+        self.spinbox4_3 = tkinter.Spinbox(self.child_window, from_=0, to=200)
+        self.spinbox4_3.grid(row=4, column=5, padx=10, pady=5)
+        self.label4_3unit= tkinter.Label(self.child_window, text="times")
+        self.label4_3unit.grid(row=4, column=6, padx=10, pady=5, sticky="w")
 
         self.label5 = tkinter.Label(self.child_window, text="Weight of lift:")
         self.label5.grid(row=5, column=0, padx=10, pady=5, sticky="w")
         self.spinbox5 = tkinter.Spinbox(self.child_window, from_=0, to=400)
         self.spinbox5.grid(row=5, column=1, padx=10, pady=5)
+        self.label5_unit= tkinter.Label(self.child_window, text="KG")
+        self.label5_unit.grid(row=5, column=2, padx=10, pady=5, sticky="w")
+
+        self.spinbox5_2 = tkinter.Spinbox(self.child_window, from_=0, to=400)
+        self.spinbox5_2.grid(row=5, column=3, padx=10, pady=5)
+        self.label5_2unit= tkinter.Label(self.child_window, text="KG")
+        self.label5_2unit.grid(row=5, column=4, padx=10, pady=5, sticky="w")
+
+        self.spinbox5_3= tkinter.Spinbox(self.child_window, from_=0, to=400)
+        self.spinbox5_3.grid(row=5, column=5, padx=10, pady=5)
+        self.label5_3unit= tkinter.Label(self.child_window, text="KG")
+        self.label5_3unit.grid(row=5, column=6, padx=10, pady=5, sticky="w")
+
 
         # Add a close button
         self.return_value = None  # Initialize the return value
@@ -58,8 +97,14 @@ class ChildWindow:
             self.entry1.get(),
             self.combobox2.get(),
             self.spinbox3.get(),
+            self.spinbox3_2.get(),
+            self.spinbox3_3.get(),
             self.spinbox4.get(),
+            self.spinbox4_2.get(),
+            self.spinbox4_3.get(),
             self.spinbox5.get(),
+            self.spinbox5_2.get(),
+            self.spinbox5_3.get(),
         )
         
         self.child_window.destroy()

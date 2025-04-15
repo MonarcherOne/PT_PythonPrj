@@ -80,7 +80,7 @@ class MainWindow:
         user_list_text = ""
         
         for user in self.user_list:
-            user_list_text += user[0] + ", " + user[1] + ", " + user[2] + " km, " + user[3] + " reps, " + user[4] + " kg\n"
+            user_list_text += user[0] + ", " + user[1] + ",\n" + "day 1: " + user[2] + " km, " + user[5] + " reps, " + user[8] + " kg\n" + "day 2: " + user[3] + " km, " + user[6] + " reps, " + user[9] + " kg\n" + "day 3: " + user[4] + " km, " + user[7] + " reps, " + user[10] + " kg\n"
 
         if len(user_list_text) > 0:
             user_list_text = user_list_text[:-1]
