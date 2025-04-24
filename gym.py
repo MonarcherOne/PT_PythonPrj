@@ -334,6 +334,7 @@ class MainWindow:
         self.label2_details.config(text=user_list_text)
 
     def calculate(self):
+        #calls the show result function for calculate points and show result
         self.label4_details.config(text=show_result(self.user_list))
 
 
