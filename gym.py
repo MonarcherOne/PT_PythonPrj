@@ -85,6 +85,7 @@ def gym_calculate (user):
     if gender == "Female":
         point = point * 1.5
 
+    #get point for monthly (average daily x 30)
     return point / dayCount * 30
 
 
