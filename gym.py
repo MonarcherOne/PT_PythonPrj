@@ -15,12 +15,30 @@ from tkinter import ttk
 # Data correction: distance will be between 0 and 50, reps will be between 0 and 100, weight will be between 0 and 150.
 # If all values are 0, skip the calculation for that day.
 
-# After calcutated, will get the avegarge points for each user, then multiply by 30, and the winner will be the one with the most points.
+# After calcutated, will get the daily average points for each user(all divide by # of day inputted by user), then multiply by 30(monthly), and the winner will be the one with the most monthly points.
 
 # Ranking system:
 # Bronze rank is from 0-200,000 points,
 # Silver is from 200,001 to 1,000,000
 # Diamond is > 1,000,000
+
+
+# calculate point for 1 day
+def gym_calculate_daily (distance, reps, weight):
+    point = 0
+    if distance <= 10:
+        point = point + (distance * 500)
+    else:
+        point = point + (10 * 500) + ((distance - 10) * 1000)
+
+    totalWeight = reps * weight
+    
+    if totalWeight <=100: 
+        point = point + (totalWeight * 5)
+    else:
+        point = point + (100 * 5) + ((totalWeight - 100)* 8)
+    
+    return point
 
 
 # calculate point for 1 user
@@ -55,9 +73,12 @@ def gym_calculate (user):
 
         # skip if all values are 0
         if distance == 0 and reps == 0 and weight == 0:
+            #continue command meaning skip this day and go back to the for and calculate for the next day
             continue
-
+        
+        #if all values are valid(user has at least inputted something)then daycount will be added 1. If not, continue above and not add the day count.
         dayCount += 1
+        
 
         point += gym_calculate_daily(distance, reps, weight)
     
@@ -66,22 +87,6 @@ def gym_calculate (user):
 
     return point / dayCount * 30
 
-# calculate point for 1 day
-def gym_calculate_daily (distance, reps, weight):
-    point = 0
-    if distance <= 10:
-        point = point + (distance * 500)
-    else:
-        point = point + (10 * 500) + ((distance - 10) * 1000)
-
-    totalWeight = reps * weight
-    
-    if totalWeight <=100: 
-        point = point + (totalWeight * 5)
-    else:
-        point = point + (100 * 5) + ((totalWeight - 100)* 8)
-    
-    return point
 
 # get the ranking of the user based on the points
 def get_ranking (point):
@@ -121,7 +126,7 @@ print(show_result(list_users))
 
 
 # comment below line for UI running:
-exit()
+#exit()
 
 
 # UI Part
